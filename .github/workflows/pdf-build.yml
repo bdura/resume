@@ -26,10 +26,11 @@ jobs:
         run: |
           mkdir deployment
           cp resume.pdf "deployment/Basile Dura Resume.pdf"
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: report # The branch the action should deploy to.
+          BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: deployment # The folder the action should deploy.
           CLEAN: true

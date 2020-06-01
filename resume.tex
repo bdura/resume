@@ -48,6 +48,9 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\newcommand{\linkit}[2]{\href{#1}{\textit{#2}}}
+\newcommand{\link}[2]{\href{#1}{#2}}
+
 \makeatletter
 \patchcmd{\@sectioncolor}{\color}{\mdseries\color}{}{}
 \makeatother
