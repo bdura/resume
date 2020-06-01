@@ -37,6 +37,6 @@ jobs:
         with:
           SSH: true
           REPOSITORY_NAME: bdura/pages
-          TARGET_FOLDER: assets
+          TARGET_FOLDER: assets/files
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: deployment # The folder the action should deploy.
