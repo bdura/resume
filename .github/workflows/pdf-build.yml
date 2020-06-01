@@ -31,6 +31,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          REPOSITORY_NAME: bdura/bdura.github.io
+          TARGET_FOLDER: assets/files
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: deployment # The folder the action should deploy.
-          CLEAN: true
