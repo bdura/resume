@@ -1,0 +1,4 @@
+latex-output/
+*.synctex.gz
+resume.pdf
+missfont.log

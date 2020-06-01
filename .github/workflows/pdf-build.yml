@@ -19,7 +19,8 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: resume.tex
-          latexmk_use_xelatex: true
+          latexmk_use_lualatex: true
+          args: -pdf
 
       - name: Prepare files
         run: |
