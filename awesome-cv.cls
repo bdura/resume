@@ -161,22 +161,22 @@
 %                Configuration for fonts
 %-------------------------------------------------------------------------------
 % Set the FontAwesome font to be up-to-date.
-\newfontfamily\FA[Path=\@fontdir]{FontAwesome}
+\newfontfamily\FA[Path=\@fontdir]{FontAwesome.ttf}
 % Set font for header (default is Roboto)
 \newfontfamily\headerfont[
   Path=\@fontdir,
-  UprightFont=*-Regular,
-  ItalicFont=*-Italic,
-  BoldFont=*-Bold,
-  BoldItalicFont=*-BoldItalic,
+  UprightFont=*-Regular.ttf,
+  ItalicFont=*-Italic.ttf,
+  BoldFont=*-Bold.ttf,
+  BoldItalicFont=*-BoldItalic.ttf,
 ]{Roboto}
 
 \newfontfamily\headerfontlight[
   Path=\@fontdir,
-  UprightFont=*-Thin,
-  ItalicFont=*-ThinItalic,
-  BoldFont=*-Medium,
-  BoldItalicFont=*-MediumItalic,
+  UprightFont=*-Thin.ttf,
+  ItalicFont=*-ThinItalic.ttf,
+  BoldFont=*-Medium.ttf,
+  BoldItalicFont=*-MediumItalic.ttf,
 ]{Roboto}
 
 \newcommand*{\footerfont}{\sourcesanspro}
@@ -574,6 +574,25 @@
       {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
       \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
     \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+  \end{tabular*}%
+}
+
+% Define an environment for cventry
+\newenvironment{cvpublications}{%
+  \vspace{\acvSectionContentTopSkip}
+  \begin{center}
+}{%
+  \end{center}
+}
+% Define an entry of cv information
+% Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
+\newcommand*{\cvpublication}[4]{%
+  \vspace{-2.0mm}
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \entrytitlestyle{#1} & \entrylocationstyle{\textup{#2}} \\
+      \descriptionstyle{#4} & \entrydatestyle{#3} \\
   \end{tabular*}%
 }
 
