@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout repository 🛎️
         uses: actions/checkout@v2
 
       - name: Compile LaTeX document 📖
@@ -22,7 +22,7 @@ jobs:
           latexmk_use_lualatex: true
           args: -pdf
 
-      - name: Prepare files
+      - name: Prepare files 📂
         run: |
           mkdir deployment
           cp resume.pdf "deployment/Basile Dura Resume.pdf"
@@ -32,7 +32,13 @@ jobs:
         with:
           ssh-private-key: ${{ secrets.DEPLOY_KEY }}
 
-      - name: Deploy 🚀
+      - name: Deploy to resume branch 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          BRANCH: resume # The branch the action should deploy to.
+          FOLDER: deployment # The folder the action should deploy.
+
+      - name: Deploy to pages 🚀
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           SSH: true
