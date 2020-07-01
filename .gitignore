@@ -2,3 +2,4 @@ latex-output/
 *.synctex.gz
 resume.pdf
 missfont.log
+.DS_Store
