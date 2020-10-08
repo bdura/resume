@@ -1,5 +1,5 @@
 latex-output/
 *.synctex.gz
-resume.pdf
+*.pdf
 missfont.log
 .DS_Store
